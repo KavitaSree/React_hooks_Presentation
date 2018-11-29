@@ -11,15 +11,15 @@ import {
 import DeleteOutlined from "@material-ui/icons/DeleteOutlined";
 
 const TodoListItem = memo(props => (
-  <ListItem divider={props.divider}>
+  <ListItem divider={this.props.divider}>
     <Checkbox
-      onClick={props.onCheckBoxToggle}
-      checked={props.checked}
+      onClick={this.props.onCheckBoxToggle}
+      checked={this.props.checked}
       disableRipple
     />
-    <ListItemText primary={props.text} />
+    <ListItemText primary={this.props.text} />
     <ListItemSecondaryAction>
-      <IconButton aria-label="Delete Todo" onClick={props.onButtonClick}>
+      <IconButton aria-label="Delete Todo" onClick={this.props.onButtonClick}>
         <DeleteOutlined />
       </IconButton>
     </ListItemSecondaryAction>
