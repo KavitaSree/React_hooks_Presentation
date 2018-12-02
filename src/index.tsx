@@ -1,16 +1,23 @@
 import "./styles.css";
 
-import React, { memo } from "react";
+import * as React from "react";
+import { memo, ReactNode, Component } from 'react';
 import ReactDOM from "react-dom";
 
-import { useInputValue, useTodos } from "./custom-hooks";
+import { useInputValue, useTodos } from './custom-hooks';
 
 import Layout from "./components/Layout";
 
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
 
-const TodoApp = memo(props => {
+interface Props {
+  type?: string;
+  children?: ReactNode;
+}
+
+//const TodoApp: = memo(props => {
+const TodoApp: React.SFC<Props> = props => {
   const { inputValue, changeInput, clearInput, keyInput } = useInputValue();
   const { todos, addTodo, checkTodo, removeTodo } = useTodos();
 
@@ -34,7 +41,8 @@ const TodoApp = memo(props => {
       />
     </Layout>
   );
-});
+};
+const MemoedTodoApp = memo(TodoApp);
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<TodoApp />, rootElement);
+ReactDOM.render(<MemoedTodoApp />, rootElement);

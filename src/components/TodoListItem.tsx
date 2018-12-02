@@ -1,4 +1,5 @@
-import React, { memo } from "react";
+import * as React from "react";
+import { memo, ReactNode, Component } from "react";
 
 import {
   List,
@@ -10,20 +11,31 @@ import {
 } from "@material-ui/core";
 import DeleteOutlined from "@material-ui/icons/DeleteOutlined";
 
-const TodoListItem = memo(props => (
-  <ListItem divider={this.props.divider}>
+interface Props {
+  type?: string;
+  children?: ReactNode;
+  divider;
+  onCheckBoxToggle;
+  checked;
+  text;
+  onButtonClick;
+}
+
+const TodoListItem: React.SFC<Props> = props => (
+  <ListItem divider={props.divider}>
     <Checkbox
-      onClick={this.props.onCheckBoxToggle}
-      checked={this.props.checked}
+      onClick={props.onCheckBoxToggle}
+      checked={props.checked}
       disableRipple
     />
-    <ListItemText primary={this.props.text} />
+    <ListItemText primary={props.text} />
     <ListItemSecondaryAction>
-      <IconButton aria-label="Delete Todo" onClick={this.props.onButtonClick}>
+      <IconButton aria-label="Delete Todo" onClick={props.onButtonClick}>
         <DeleteOutlined />
       </IconButton>
     </ListItemSecondaryAction>
   </ListItem>
-));
+);
 
-export default TodoListItem;
+const MemoedTodoListItem = memo(TodoListItem);
+export default MemoedTodoListItem;

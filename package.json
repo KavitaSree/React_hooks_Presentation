@@ -1,19 +1,19 @@
 {
   "name": "react_hooks_presentation",
   "version": "1.0.0",
-  "description": "Aum Gum Ganapathaye Namah",
-  "main": "src/index.js",
+  "description": "",
+  "main": "src/index.tsx",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/KavitaSree/React_hooks_Presentation.git"
   },
-  "author": "Shankara",
+  "author": "kavita",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/KavitaSree/React_hooks_Presentation/issues"
@@ -25,9 +25,11 @@
     "@types/material-ui": "^0.21.5",
     "react": "^16.7.0-alpha.0",
     "react-dom": "^16.7.0-alpha.0",
-    "react-scripts": "2.0.3"
+    "react-scripts-ts": "^3.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "typescript": "^3.2.1"
+  },
   "browserslist": [
     ">0.2%",
     "not dead",
